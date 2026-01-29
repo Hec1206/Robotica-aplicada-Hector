@@ -4,7 +4,7 @@ nav:
   - Inicio: index.md
   - Actividades:
 
-    - Activity 01 ROS2 Topics: - Activity 01 - ROS2 Topic.smd
+    - Activity 01 ROS2 Topics: - Activity 01 - ROS2 Topics.md
     - Transform Nomenclature: Transform Nomenclature.md
       
 markdown_extensions:
