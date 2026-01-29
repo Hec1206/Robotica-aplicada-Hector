@@ -6,8 +6,10 @@
 
 *Execirse 1*
 ![Diagrama del sistema](recursos/imgs/Ejercicio1.png)
+<div align="justify">
 First, the rotation about the y-axis by 45 degrees is calculated. Then, its rotation matrix is obtained. Next, the rotation matrix about the x-axis by 60 degrees is computed. The matrices are then multiplied from right to left, and finally, the resulting rotation matrix is obtained.
-![Diagrama del sistema](recursos/imgs/ejer1.jpeg)
+</div>
+![Diagrama del sistema](recursos/imgs/ejer1.jpeg)<br>
 
 *Execirse 2*
 ![Diagrama del sistema](recursos/imgs/Ejercicio2.png)
