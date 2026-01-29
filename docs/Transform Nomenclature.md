@@ -26,6 +26,9 @@ In the second step, we compute the next rotation matrix, multiply it with the tr
 
 ![Diagrama del sistema](recursos/imgs/Ejercicio3.png)
 ![Diagrama del sistema](recursos/imgs/Ejercicio3.1.png)
+
+
+
 In the third case,part one  we need to obtain the homogeneous transformation matrix from point A to point B. We verify that the Ax axis remains in the same position but with opposite direction, which means a 180-degree rotation. The axis that does not move is the Z-axis, so the calculations are performed about that axis. Then, it is observed that there is only a translation along the X-axis, so the coordinates are (3, 0, 0). Finally, we perform the matrix multiplication to obtain the homogeneous transformation matrix.
 ![Diagrama del sistema](recursos/imgs/ejer3.jpeg)
 
