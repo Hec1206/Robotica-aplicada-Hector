@@ -1,14 +1,5 @@
-# Documentación del Proyecto
+# Documentación de mi Pagina Web Hector Ojeda
 
-Bienvenido 👋  
-Esta es una **plantilla** basada en [MkDocs](https://www.mkdocs.org/) + [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) para cursos y proyectos.
-
+Welcome 👋  
 ---
-
-## Empezar rápido (3 pasos)
-
-1. **Edita el nombre del sitio** en `mkdocs.yml`:
-   ```yaml
-   site_name: Documentación del Curso
-   theme:
-     name: material
+This page will be used to document everything covered in the robotics course.
