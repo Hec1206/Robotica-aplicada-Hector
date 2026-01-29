@@ -3,7 +3,7 @@ site_name: Plantilla para Documentación
 nav:
   - Inicio: index.md
   - Actividades:
-      - Actividad 1: actividad1.md
+      - Actividad 1: Actividad1.md
       
 markdown_extensions:
   - pymdownx.highlight:
