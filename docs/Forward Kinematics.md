@@ -29,10 +29,7 @@ To apply the **Denavit–Hartenberg (D–H) Convention** for the kinematic model
 
 ---
 
-# Robot 1
-
-## Robot Photo
-![Robot 1 photo](imgs2/ejercicio1.png)
+![](imgs2/ejercicio1.png)
 
 This figure shows the physical configuration of **Robot 1**, including its links and joints. 
 
@@ -42,14 +39,11 @@ This figure shows the physical configuration of **Robot 1**, including its links
 ![Robot 1 scheme](imgs2/ejercicio1.1.png)
 
 ## DH Transformation Matrix
-![Robot 1 DH](imgs2/ejercicio1.3.png)
+![Robot 1 DH](imgs2/ejercicio1.2.png)
 
 ---
 
-# Robot 2
-
-## Robot Photo
-![Robot 2 photo](imgs2/ejercicio2.png)
+![](imgs2/ejercicio2.png)
 
 This figure shows the physical configuration of **Robot 2**, including its links and joints.
 
@@ -64,10 +58,7 @@ This figure shows the physical configuration of **Robot 2**, including its links
 
 ---
 
-# Robot 3
-
-## Robot Photo
-![Robot 3 photo](imgs2/ejercicio3.png)
+![](imgs2/ejercicio3.png)
 
 This figure shows the physical configuration of **Robot 3**, including its links and joints. 
 
@@ -83,10 +74,7 @@ This figure shows the physical configuration of **Robot 3**, including its links
 
 ---
 
-# Robot 4
-
-## Robot Photo
-![Robot 4 photo](imgs2/ejercicio4.png) 
+![](imgs2/ejercicio4.png) 
 
 This figure shows the physical configuration of **Robot 4**, including its links and joints.
 
@@ -103,10 +91,7 @@ This figure shows the physical configuration of **Robot 4**, including its links
 
 ---
 
-# Robot 5
-
-## Robot Photo
-![Robot 5 photo](imgs2/ejercicio5.png)
+![](imgs2/ejercicio5.png)
 
 This figure shows the physical configuration of **Robot 5**, including its links and joints.
 
