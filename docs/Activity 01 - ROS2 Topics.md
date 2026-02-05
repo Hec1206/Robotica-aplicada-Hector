@@ -122,7 +122,7 @@ if __name__ == "__main__":
 ```
 
 ---
-![ubuntu](imgs1/grafica.png)
+![ubuntu](imgs1/imgpub2.png)
 ---
 
 > **Blue boxes represent nodes, and green boxes represent topics.**
