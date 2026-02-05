@@ -89,13 +89,13 @@ This figure shows the physical configuration of **Robot 4**, including its links
 
 ---
 
-## Frame Assignment / Scheme
+# Frame Assignment / Scheme
 ![Robot 4 scheme](imgs2/ejercicio4.1.png) 
 ![](imgs2/ejercicio4.2.png) 
 ![](imgs2/ejercicio4.3.png) 
 ![](imgs2/ejercicio4.4.png) 
 
-## DH Transformation Matrix
+# DH Transformation Matrix
 
 T06 = [
  r11 r12 r13 px
@@ -151,7 +151,7 @@ This figure shows the physical configuration of **Robot 5**, including its links
 
 ---
 
-## Frame Assignment / Scheme
+# Frame Assignment / Scheme
 ![Robot 5 scheme](imgs2/ejercicio5.1.png)
 ![](imgs2/ejercicio5.2.png)
 ![](imgs2/ejercicio5.3.png)
@@ -160,6 +160,6 @@ This figure shows the physical configuration of **Robot 5**, including its links
 ![](imgs2/ejercicio5.6.png)
 
 
-## DH Transformation Matrix
+# DH Transformation Matrix
 ![Robot 5 DH](imgs2/ejercicio5.7.png)
 ![](imgs2/ejercicio5.8.png)
