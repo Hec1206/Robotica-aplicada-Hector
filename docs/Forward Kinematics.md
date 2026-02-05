@@ -28,7 +28,9 @@ To apply the **Denavit–Hartenberg (D–H) Convention** for the kinematic model
     in ever excersie in the scheme The coordinate frames are assigned according to the **Denavit–Hartenberg Convention**, where each **z-axis** is aligned with the joint axis, and each **x-axis** is defined along the common normal between consecutive joints. This assignment allows the direct extraction of the D–H parameters and the formulation of the corresponding transformation matrices. and in the transformation Matrix i am using the assigned frames and the Denavit–Hartenberg parameters, the homogeneous transformation matrix represents the spatial relationship between consecutive links, allowing the kinematic modeling of the robot.
 
 ---
+
 ## exercise 1
+
 ![](imgs2/ejercicio1.png)
 
 This figure shows the physical configuration of **Robot 1**, including its links and joints. 
@@ -42,7 +44,9 @@ This figure shows the physical configuration of **Robot 1**, including its links
 ![Robot 1 DH](imgs2/ejercicio1.2.png)
 
 ---
+
 ## exercise 2
+
 ![](imgs2/ejercicio2.png)
 
 This figure shows the physical configuration of **Robot 2**, including its links and joints.
@@ -57,7 +61,9 @@ This figure shows the physical configuration of **Robot 2**, including its links
 ![](imgs2/ejercico2.3.jpeg)
 
 ---
+
 ## exercise 3
+
 ![](imgs2/ejercicio3.png)
 
 This figure shows the physical configuration of **Robot 3**, including its links and joints. 
@@ -83,6 +89,7 @@ This figure shows the physical configuration of **Robot 3**, including its links
 ---
 
 ## exercise 4
+
 ![](imgs2/ejercicio4.png) 
 
 This figure shows the physical configuration of **Robot 4**, including its links and joints.
@@ -104,9 +111,7 @@ T06 = [
  0   0   0   1
 ]
 
-
 # Rotation Terms
-
 
 r11 = c1*c23*c4*s5 + c1*s23*c5 - s1*s4*s5
 
@@ -135,16 +140,16 @@ r33 = s6*s23*s4
 
 # Position Terms
 
-
 px = c1*(8*c2 + 8*c23 - d4*s23) - d3*s1
 
 py = s1*(8*c2 + 8*c23 - d4*s23) + d3*c1
 
 pz = 13 + 8*s2 + 8*s23 + d4*c23 + d6
 
-
 ---
+
 ## exercise 5
+
 ![](imgs2/ejercicio5.png)
 
 This figure shows the physical configuration of **Robot 5**, including its links and joints.
