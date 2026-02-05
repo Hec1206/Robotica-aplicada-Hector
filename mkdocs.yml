@@ -1,8 +1,8 @@
 site_name: Hector Ojeda Robotics web page
 
 nav:
-  - Inicio: index.md
-  - Actividades:
+  - Home: index.md
+  - Activity:
 
     - Activity 01 ROS2 Topics: "Activity 01 - ROS2 Topics.md"
     - Transform Nomenclature: "Transform Nomenclature.md"
