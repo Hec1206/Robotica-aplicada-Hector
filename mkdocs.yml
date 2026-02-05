@@ -6,6 +6,7 @@ nav:
 
     - Activity 01 ROS2 Topics: "Activity 01 - ROS2 Topics.md"
     - Transform Nomenclature: "Transform Nomenclature.md"
+    - Forward Kinematics: "Forward Kinematics.md"
       
 markdown_extensions:
   - pymdownx.highlight:
