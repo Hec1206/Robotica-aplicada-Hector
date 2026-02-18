@@ -7,8 +7,6 @@ A constant number is published periodically, received by a second node, accumula
 
 ### 1. `robot1_publisher` Node
 
-This node publishes a constant integer value periodically.
-
 - **Published Topic:** `/robot_pub1`
 - **Message Type:** `example_interfaces/msg/Int64`
 - **Publishing Rate:** 1 message per second
@@ -30,16 +28,7 @@ This node subscribes to the published number, accumulates it, and republishes th
   - Adds each received number to the counter
   - Publishes the updated counter value immediately from the subscriber callback
 
----
 
-## Topics
-
-| Topic Name     | Message Type                  | Description                               |
-|---------------:|:------------------------------:|-------------------------------------------|
-| `/robot_pub1`  | `example_interfaces/msg/Int64` | Constant number publisher                 |
-| `/robot_pub2`  | `example_interfaces/msg/Int64` | Accumulated counter output                |
-
----
 
 ## Node Implementation
 
