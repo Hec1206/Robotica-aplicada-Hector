@@ -53,10 +53,10 @@ the part of the service to add to the code
 
         return response
 ```
+# How to Call the Service
 the Client its going to be the terminal so we need to add this line in ubuntu so the serve has a client and it can reset the counter
 
-# How to Call the Service
-To reset the counter we need to add this line
+So to reset the counter we need to add this line
 ```basch
 ros2 service call /reset_counter std_srvs/srv/SetBool "{data: true}"
 ```
