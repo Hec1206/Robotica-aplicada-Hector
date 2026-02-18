@@ -2,10 +2,10 @@ site_name: Hector Ojeda Robotics web page
 
 nav:
   - Home: index.md
-  - Activity:
+  - Activities:
 
     - Activity 01 ROS2 Topics: "Activity 01 - ROS2 Topics.md"
-    - Activity 02 ROS2 Services: "Actvity_2_Services.md"
+    - Activity 02 ROS2 Services: "Activity2services.md"
     - Transform Nomenclature: "Transform Nomenclature.md"
     - Forward Kinematics: "Forward Kinematics.md"
       
