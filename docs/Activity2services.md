@@ -32,6 +32,50 @@ This node subscribes to the published number, accumulates it, and republishes th
   - Publishes the updated counter value immediately from the subscriber callback
   -has a services whenever it gets a true resets the counter
 
+the part of the service to add to the code 
+
+```basch
+        self.server_= self.create_service(SetBool, #Service TYPE
+                                          "reset_counter", #service Name
+                                          self.reset_callback
+                                          )
+        self.get_logger().info("Service Server is ready")
+
+    def reset_callback(self, request, response):
+        if request.data:
+            self.counter = 0
+            self.get_logger().info("Counter reset!")
+            response.success = True
+            response.message = "Counter reset"
+        else:
+            response.success = True
+            response.message = "Reset not executed"
+
+        return response
+```
+the Client its going to be the terminal so we need to add this line in ubuntu so the serve has a client and it can reset the counter
+
+# How to Call the Service
+To reset the counter:
+
+```basch
+ros2 service call /reset_counter std_srvs/srv/SetBool "{data: true}"
+
+```
+---
+## System Architecture
+
+- **Nodes**
+  - `robot1_publisher`
+  - `number counter_code`
+
+- **Topics**
+  - `/robot_pub1`
+  - `/robot_pub2`
+
+- **Service**
+    -`/reset_counter`
+---
 
 ## Node Implementation
 
@@ -128,32 +172,7 @@ if __name__ == "__main__":
     main()
 ```
 
-# How to Call the Service
-To reset the counter:
-
-ros2 service call /reset_counter std_srvs/srv/SetBool "{data: true}"
-
-```basch
-ros2 service call /reset_counter std_srvs/srv/SetBool "{data: true}"
-
-```
-
 ---
-## System Architecture
-
-
-- **Nodes**
-  - `robot1_publisher`
-  - `number counter_code`
-
-- **Topics**
-  - `/robot_pub1`
-  - `/robot_pub2`
-
-- **Service**
-    -`/reset_counter`
----
-
 ## Results
 
 ![](imgs2/service.png)
