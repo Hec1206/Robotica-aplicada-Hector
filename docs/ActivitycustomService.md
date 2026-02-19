@@ -196,7 +196,8 @@ if __name__ == "__main__":
 
 In this code the important its the creation of the service and the publisher
 
-```basch
+---
+```text
 class RobotstatusPublisher(Node):
 
     def __init__(self):
@@ -231,6 +232,7 @@ class RobotstatusPublisher(Node):
             self.led = [0, 0, 0] 
         return response 
 ```
+---
 ---
 
  **Full code**
