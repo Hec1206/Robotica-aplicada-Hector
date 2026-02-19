@@ -57,12 +57,13 @@ bool success
 ```
 In the msg we have the led state
 
-```basch
+```text 
+
     int32[] led
 ```
 the principal main importance of this code is has a suscriber and has code of client
 
-```basch
+```text
 
 class BatteryClient(Node):
 
@@ -89,7 +90,7 @@ class BatteryClient(Node):
 
 then next part has the functions that gets the battery to cero and then charges also the request when gets the value 0 and the part of the future to prevent errors
 
-```basch
+```text
         def update_battery(self):
 
         if self.charging:
@@ -124,8 +125,7 @@ then next part has the functions that gets the battery to cero and then charges 
 ```
 ---
 
-## **Full code**
----
+ **Full code**
 
 ```python
 #!/usr/bin/env python3
@@ -195,7 +195,6 @@ if __name__ == "__main__":
     main()
 ```
 ---
-
 ## Explenatation Code led Panel 
 
 In this code the important its the creation of the service and the publisher
@@ -237,8 +236,7 @@ class RobotstatusPublisher(Node):
 ```
 ---
 
-## **Full code**
-
+ **Full code**
 ```python
 ##!/usr/bin/env python3
 
