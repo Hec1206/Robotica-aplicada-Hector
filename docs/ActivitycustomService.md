@@ -118,7 +118,6 @@ then next part has the functions that gets the battery to cero and then charges 
         if response.success:
             self.get_logger().info("charging battery.")
 ```
----
 
 **Full code**
 
@@ -190,13 +189,12 @@ def main(args=None):
 if __name__ == "__main__":
     main()
 ```
----
+
 
 ## Explenatation Code led Panel 
 
 In this code the important its the creation of the service and the publisher
 
----
 ```text
 class RobotstatusPublisher(Node):
 
@@ -232,8 +230,6 @@ class RobotstatusPublisher(Node):
             self.led = [0, 0, 0] 
         return response 
 ```
----
----
 
  **Full code**
 ```python
@@ -289,7 +285,7 @@ def main(args=None):
 if __name__ == "__main__":
     main()
 ```
----
+
 ## Results
 
 When the baterry is in use normal 
