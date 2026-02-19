@@ -32,11 +32,10 @@ Maintain the current LED state (for example, [0,0,0] or [0,0,1]) continuously pu
 
 ---
 ## Explenatation Code Battery 
----
 
 we need both services and messages customs in the code because we need to send to request´s and recieve the constant messages
 
-```basch
+```text
 import rclpy
 from rclpy.node import Node
 
@@ -48,7 +47,7 @@ but what we are importing? in other package  *hector_interfaces *we have two fol
 
 In the services we have the battery level the request the charging and the response in this case is call success
 
-```basch
+```text
 float32 battery_level
 bool request
 bool charging
@@ -58,13 +57,13 @@ bool success
 In the msg we have the led state
 
 ```text 
-
     int32[] led
+
 ```
 the principal main importance of this code is has a suscriber and has code of client
 
+---
 ```text
-
 class BatteryClient(Node):
 
     def __init__(self):
@@ -73,8 +72,7 @@ class BatteryClient(Node):
         self.client = self.create_client(Setled, "Setled")
         while not self.client.wait_for_service(timeout_sec=1.0):
             self.get_logger().info("Waiting for service 'set_led'...")
-        
-        
+                
         self.charging = False   
         self.battery_level = 100.0  # empieza bajo para prueba rápida
         self.current_led = [0, 0, 0]
@@ -84,7 +82,6 @@ class BatteryClient(Node):
 
     def led_callback(self, msg):
         self.current_led = msg.led
-
 ```
 ---
 
@@ -126,7 +123,6 @@ then next part has the functions that gets the battery to cero and then charges 
 ---
 
  **Full code**
-
 ```python
 #!/usr/bin/env python3
 import rclpy
@@ -195,6 +191,7 @@ if __name__ == "__main__":
     main()
 ```
 ---
+
 ## Explenatation Code led Panel 
 
 In this code the important its the creation of the service and the publisher
