@@ -31,8 +31,8 @@ Maintain the current LED state (for example, [0,0,0] or [0,0,1]) continuously pu
 ![Goal](imgs3/goal.png)
 
 ---
-
 ## Explenatation Code Battery 
+---
 
 we need both services and messages customs in the code because we need to send to request´s and recieve the constant messages
 
@@ -63,7 +63,6 @@ In the msg we have the led state
 the principal main importance of this code is has a suscriber and has code of client
 
 ```basch
-
 class BatteryClient(Node):
 
     def __init__(self):
@@ -85,42 +84,42 @@ class BatteryClient(Node):
         self.current_led = msg.led
 
 ```
+---
 then next part has the functions that gets the battery to cero and then charges also the request when gets the value 0 and the part of the future to prevent errors 
+---
 
 ```basch
 def update_battery(self):
 
-        if self.charging:
-            self.battery_level += 1.0
-        else:
-            self.battery_level -= 1.0
-
+    if self.charging:
+        self.battery_level += 1.0
+    else:
+        self.battery_level -= 1.0
         self.get_logger().info(f"Battery: {self.battery_level} {self.current_led}")
 
-        if self.battery_level <= 0.0:
-            self.battery_level = 0.0
-            self.charging = True
-            self.send_request(True)
+    if self.battery_level <= 0.0:
+        self.battery_level = 0.0
+        self.charging = True
+        self.send_request(True)
 
-        if self.battery_level >= 100.0:
-            self.battery_level = 100.0
-            self.charging = False
-            self.send_request(False)
+    if self.battery_level >= 100.0:
+        self.battery_level = 100.0
+        self.charging = False
+        self.send_request(False)
 
-    def send_request(self, state):
-        request = Setled.Request()
-        request.battery_level = self.battery_level
-        request.request = state
+def send_request(self, state):
+    request = Setled.Request()
+    request.battery_level = self.battery_level
+    request.request = state
 
-        future = self.client.call_async(request)
-        future.add_done_callback(self.response_callback)
+    future = self.client.call_async(request)
+    future.add_done_callback(self.response_callback)
 
-    def response_callback(self, future):
-        response = future.result()
+def response_callback(self, future):
+    response = future.result()
 
-        if response.success:
-            self.get_logger().info("charging battery.")
-
+    if response.success:
+        self.get_logger().info("charging battery.")
 ```
 ---
 ## **Full code**
@@ -298,7 +297,7 @@ if __name__ == "__main__":
     main()
 ```
 ---
-## ** Results **
+##  Results
 ---
 
 When the baterry is in use normal 

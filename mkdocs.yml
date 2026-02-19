@@ -6,9 +6,10 @@ nav:
 
     - Activity 01 ROS2 Topics: "Activity 01 - ROS2 Topics.md"
     - Activity 02 ROS2 Services: "Activity2services.md"
+    - Activity 03 ROS2 custom Service: "ActivitycustomService"
     - Transform Nomenclature: "Transform Nomenclature.md"
     - Forward Kinematics: "Forward Kinematics.md"
-    - Activity 03 ROS2 custom Service: "ActivitycustomService"
+    
       
 markdown_extensions:
   - pymdownx.highlight:
