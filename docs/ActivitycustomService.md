@@ -1,4 +1,4 @@
-# activity custom service ROS2 #
+# Activity custom service ROS2 #
 
 In this project, a distributed system was developed in ROS 2 that simulates the behavior of a battery and its interaction with an LED panel through communication based on services and topics.
 
@@ -86,8 +86,8 @@ class BatteryClient(Node):
 
 ```
 ---
+
 then next part has the functions that gets the battery to cero and then charges also the request when gets the value 0 and the part of the future to prevent errors
----
 
 ```basch
 
@@ -124,11 +124,12 @@ then next part has the functions that gets the battery to cero and then charges 
             self.get_logger().info("charging battery.")
 ```
 ---
-
-# **Full code**
+## **Full code**
 battery code:
 
+---
 ```python
+
 #!/usr/bin/env python3
 
 import rclpy
@@ -139,14 +140,12 @@ from hector_interfaces.srv import Setled
 
 class BatteryClient(Node):
 
-    def __init__(self):
-        super().__init__("battery_client")
+def __init__(self):
+    super().__init__("battery_client")
 
-        self.client = self.create_client(Setled, "Setled")
-        while not self.client.wait_for_service(timeout_sec=1.0):
-            self.get_logger().info("Waiting for service 'set_led'...")
-        
-        
+    self.client = self.create_client(Setled, "Setled")
+    while not self.client.wait_for_service(timeout_sec=1.0):
+        self.get_logger().info("Waiting for service 'set_led'...")
         self.charging = False   
         self.battery_level = 100.0  # empieza bajo para prueba rápida
         self.current_led = [0, 0, 0]
@@ -154,27 +153,27 @@ class BatteryClient(Node):
         self.timer = self.create_timer(0.1, self.update_battery)
         self.subscriber = self.create_subscription(LedPanel, "HecStatus",self.led_callback,10)
 
-    def led_callback(self, msg):
-        self.current_led = msg.led
+def led_callback(self, msg):
+    self.current_led = msg.led
 
-    def update_battery(self):
+def update_battery(self):
 
-        if self.charging:
-            self.battery_level += 1.0
-        else:
-            self.battery_level -= 1.0
+    if self.charging:
+         self.battery_level += 1.0
+    else:
+        self.battery_level -= 1.0
 
-        self.get_logger().info(f"Battery: {self.battery_level} {self.current_led}")
+    self.get_logger().info(f"Battery: {self.battery_level} {self.current_led}")
 
-        if self.battery_level <= 0.0:
-            self.battery_level = 0.0
-            self.charging = True
-            self.send_request(True)
+    if self.battery_level <= 0.0:
+        self.battery_level = 0.0
+        self.charging = True
+        self.send_request(True)
 
-        if self.battery_level >= 100.0:
-            self.battery_level = 100.0
-            self.charging = False
-            self.send_request(False)
+    if self.battery_level >= 100.0:
+        self.battery_level = 100.0
+        self.charging = False
+        self.send_request(False)
 
     def send_request(self, state):
         request = Setled.Request()
@@ -201,13 +200,13 @@ if __name__ == "__main__":
 ```
 ---
 
-# Explenatation Code led Panel 
+## Explenatation Code led Panel 
 
-in this code the important its the creation of the service and the publisher 
+In this code the important its the creation of the service and the publisher
 
 ```basch
 class RobotstatusPublisher(Node):
-    
+
     def __init__(self):
         super().__init__('Led_panel_node') #MODIFY NAME
 
@@ -227,7 +226,6 @@ class RobotstatusPublisher(Node):
         msg.led = self.led
         self.walle.publish(msg)
 
-
     def add_two_ints_callback(self, request: Setled.Request, response: Setled.Response):
         if request.request:
 
@@ -242,8 +240,8 @@ class RobotstatusPublisher(Node):
         return response 
 ```
 ---
-# **Full code**
-code Panel:
+
+## **Full code**
 
 ---
 ```python
@@ -300,8 +298,7 @@ if __name__ == "__main__":
     main()
 ```
 ---
-# Results
----
+## Results
 
 When the baterry is in use normal 
 
@@ -311,3 +308,4 @@ When the baterry is charging
 
 ![](imgs3/charge.png)
 
+---
