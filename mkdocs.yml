@@ -8,6 +8,7 @@ nav:
     - Activity 02 ROS2 Services: "Activity2services.md"
     - Transform Nomenclature: "Transform Nomenclature.md"
     - Forward Kinematics: "Forward Kinematics.md"
+    - Activity 03 ROS2 custom Service: "ActivitycustomService"
       
 markdown_extensions:
   - pymdownx.highlight:
