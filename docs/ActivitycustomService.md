@@ -62,7 +62,6 @@ In the msg we have the led state
 ```
 the principal main importance of this code is has a suscriber and has code of client
 
----
 ```text
 class BatteryClient(Node):
 
@@ -83,7 +82,6 @@ class BatteryClient(Node):
     def led_callback(self, msg):
         self.current_led = msg.led
 ```
----
 
 then next part has the functions that gets the battery to cero and then charges also the request when gets the value 0 and the part of the future to prevent errors
 
@@ -122,8 +120,10 @@ then next part has the functions that gets the battery to cero and then charges 
 ```
 ---
 
- **Full code**
+**Full code**
+
 ```python
+
 #!/usr/bin/env python3
 import rclpy
 from rclpy.node import Node
