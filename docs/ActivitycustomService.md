@@ -85,10 +85,10 @@ class BatteryClient(Node):
         self.current_led = msg.led
 
 ```
-
-then next part has the functions that gets the battery to cero and then charges also the request when gets the value 0 and the part of the future to prevent errors-
-
 ---
+then next part has the functions that gets the battery to cero and then charges also the request when gets the value 0 and the part of the future to prevent errors
+---
+
 ```basch
 
     def update_battery(self):
@@ -125,7 +125,7 @@ then next part has the functions that gets the battery to cero and then charges 
 ```
 ---
 
-## **Full code**
+# **Full code**
 battery code:
 
 ```python
@@ -201,9 +201,10 @@ if __name__ == "__main__":
 ```
 ---
 
-## Explenatation Code led Panel 
+# Explenatation Code led Panel 
 
 in this code the important its the creation of the service and the publisher 
+
 ```basch
 class RobotstatusPublisher(Node):
     
@@ -241,10 +242,9 @@ class RobotstatusPublisher(Node):
         return response 
 ```
 ---
-## **Full code**
----
-
+# **Full code**
 code Panel:
+
 ---
 ```python
 ##!/usr/bin/env python3
@@ -300,7 +300,7 @@ if __name__ == "__main__":
     main()
 ```
 ---
-##  Results
+# Results
 ---
 
 When the baterry is in use normal 
