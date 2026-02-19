@@ -63,6 +63,7 @@ In the msg we have the led state
 the principal main importance of this code is has a suscriber and has code of client
 
 ```basch
+
 class BatteryClient(Node):
 
     def __init__(self):
@@ -84,46 +85,47 @@ class BatteryClient(Node):
         self.current_led = msg.led
 
 ```
----
-then next part has the functions that gets the battery to cero and then charges also the request when gets the value 0 and the part of the future to prevent errors 
----
 
+then next part has the functions that gets the battery to cero and then charges also the request when gets the value 0 and the part of the future to prevent errors-
+
+---
 ```basch
-def update_battery(self):
 
-    if self.charging:
-        self.battery_level += 1.0
-    else:
-        self.battery_level -= 1.0
-        self.get_logger().info(f"Battery: {self.battery_level} {self.current_led}")
+    def update_battery(self):
 
-    if self.battery_level <= 0.0:
-        self.battery_level = 0.0
-        self.charging = True
-        self.send_request(True)
+        if self.charging:
+            self.battery_level += 1.0
+        else:
+            self.battery_level -= 1.0
+            self.get_logger().info(f"Battery: {self.battery_level} {self.current_led}")
 
-    if self.battery_level >= 100.0:
-        self.battery_level = 100.0
-        self.charging = False
-        self.send_request(False)
+        if self.battery_level <= 0.0:
+            self.battery_level = 0.0
+            self.charging = True
+            self.send_request(True)
 
-def send_request(self, state):
-    request = Setled.Request()
-    request.battery_level = self.battery_level
-    request.request = state
+        if self.battery_level >= 100.0:
+            self.battery_level = 100.0
+            self.charging = False
+            self.send_request(False)
 
-    future = self.client.call_async(request)
-    future.add_done_callback(self.response_callback)
+    def send_request(self, state):
+        request = Setled.Request()
+        request.battery_level = self.battery_level
+        request.request = state
 
-def response_callback(self, future):
-    response = future.result()
+        future = self.client.call_async(request)
+        future.add_done_callback(self.response_callback)
 
-    if response.success:
-        self.get_logger().info("charging battery.")
+    def response_callback(self, future):
+        response = future.result()
+
+        if response.success:
+            self.get_logger().info("charging battery.")
 ```
 ---
+
 ## **Full code**
----
 battery code:
 
 ```python
@@ -198,8 +200,8 @@ if __name__ == "__main__":
     main()
 ```
 ---
+
 ## Explenatation Code led Panel 
----
 
 in this code the important its the creation of the service and the publisher 
 ```basch
@@ -241,8 +243,9 @@ class RobotstatusPublisher(Node):
 ---
 ## **Full code**
 ---
-code Panel:
 
+code Panel:
+---
 ```python
 ##!/usr/bin/env python3
 
