@@ -122,7 +122,10 @@ def update_battery(self):
             self.get_logger().info("charging battery.")
 
 ```
-## **Full battery code**
+---
+## **Full code**
+---
+battery code:
 
 ```python
 #!/usr/bin/env python3
@@ -197,6 +200,7 @@ if __name__ == "__main__":
 ```
 ---
 ## Explenatation Code led Panel 
+---
 
 in this code the important its the creation of the service and the publisher 
 ```basch
@@ -235,7 +239,10 @@ class RobotstatusPublisher(Node):
             self.led = [0, 0, 0] 
         return response 
 ```
-## **Full code of the Panel**
+---
+## **Full code**
+---
+code Panel:
 
 ```python
 ##!/usr/bin/env python3
@@ -291,8 +298,8 @@ if __name__ == "__main__":
     main()
 ```
 ---
-
 ## ** Results **
+---
 
 When the baterry is in use normal 
 
@@ -301,8 +308,4 @@ When the baterry is in use normal
 When the baterry is charging
 
 ![](imgs3/charge.png)
-
-The node graph
-
-
 
