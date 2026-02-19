@@ -90,8 +90,7 @@ class BatteryClient(Node):
 then next part has the functions that gets the battery to cero and then charges also the request when gets the value 0 and the part of the future to prevent errors
 
 ```basch
-
-    def update_battery(self):
+        def update_battery(self):
 
         if self.charging:
             self.battery_level += 1.0
@@ -124,17 +123,14 @@ then next part has the functions that gets the battery to cero and then charges 
             self.get_logger().info("charging battery.")
 ```
 ---
+
 ## **Full code**
-battery code:
-
 ---
+
 ```python
-
 #!/usr/bin/env python3
-
 import rclpy
 from rclpy.node import Node
-
 from hector_interfaces.msg import LedPanel
 from hector_interfaces.srv import Setled
 
@@ -243,7 +239,6 @@ class RobotstatusPublisher(Node):
 
 ## **Full code**
 
----
 ```python
 ##!/usr/bin/env python3
 
