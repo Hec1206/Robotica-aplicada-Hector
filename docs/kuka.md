@@ -30,9 +30,10 @@ The Universal **Robot (UR)** is a collaborative robot (cobot) designed to work s
 ## Results
 
 ![KUKA ROBOT](imgs3/KUKA_ROBOT.png)
+---
+
 *KUKA Robot*
 
-
-
+---
 ![UR ROBOT](imgs3/UAR_ROBOT.png)
 *UR Robot*
