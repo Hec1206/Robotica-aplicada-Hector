@@ -9,6 +9,7 @@ nav:
     - Activity 03 ROS2 custom Service: "ActivitycustomService"
     - Transform Nomenclature: "Transform Nomenclature.md"
     - Forward Kinematics: "Forward Kinematics.md"
+    - Forward Kinematics for KUKA AN UR ROBOT: "kuka.md"
     
       
 markdown_extensions:
