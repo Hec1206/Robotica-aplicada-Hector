@@ -11,14 +11,15 @@ The objective was to determine the position and orientation of the end-effector 
 
 ## General Description
 
-The **KUKA** robot is a 6-DOF industrial manipulator designed for high precision and industrial automation tasks such as:
+The **KUKA robot** is a 6-DOF industrial manipulator designed for high precision and industrial automation tasks such as.
+
 - Tasks
     * Welding
     * Pick and place    
     * Machining
     * Assembly
 
-The Universal Robot (UR) is a collaborative robot (cobot) designed to work safely alongside humans.
+The Universal **Robot (UR)** is a collaborative robot (cobot) designed to work safely alongside humans.
 
 - Main characteristics
     * 6 DOF
@@ -28,8 +29,10 @@ The Universal Robot (UR) is a collaborative robot (cobot) designed to work safel
 
 ## Results
 
-*KUKA Robot*
 ![KUKA ROBOT](imgs3/KUKA_ROBOT.png)
+*KUKA Robot*
 
-*UR Robot*
+
+
 ![UR ROBOT](imgs3/UAR_ROBOT.png)
+*UR Robot*
