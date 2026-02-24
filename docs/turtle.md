@@ -317,9 +317,9 @@ rqt_graph
 ![terminal Screenshot](imgs3/turtle.png)
 
 ## Demo Video
-<div style="text-align: center;">
-  <video controls style="width: 100%; max-width: 900px; height: auto;">
-    <source src="imgs3/turtlesim_demo.mp4" type="video/mp4">
+<div style="text-align:center;">
+  <video controls style="width:100%; max-width:900px;">
+    <source src="../imgs3/turtlesim_demo.mp4" type="video/mp4">
   </video>
 </div>
 
