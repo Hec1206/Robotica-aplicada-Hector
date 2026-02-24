@@ -1,0 +1,875 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Transform%20Nomenclature/">
+      
+      
+        <link rel="next" href="../kuka/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+    
+    
+      
+        <title>Forward Kinematics - Hector Ojeda Robotics web page</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.2/css/all.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#forward-kinematics" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Hector Ojeda Robotics web page" class="md-header__button md-logo" aria-label="Hector Ojeda Robotics web page" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Hector Ojeda Robotics web page
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Forward Kinematics
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Hector Ojeda Robotics web page" class="md-nav__button md-logo" aria-label="Hector Ojeda Robotics web page" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Hector Ojeda Robotics web page
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Activities
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Activities
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Activity%2001%20-%20ROS2%20Topics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Activity 01 ROS2 Topics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Activity2services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Activity 02 ROS2 Services
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ActivitycustomService/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Activity 03 ROS2 custom Service
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../turtle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    turtle catch project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Transform%20Nomenclature/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transform Nomenclature
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Forward Kinematics
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Forward Kinematics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objectives
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Objectives">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General Objective
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specific-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specific Objectives
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        exercise 1
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kuka/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Forward Kinematics for KUKA AN UR ROBOT
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Objectives
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Objectives">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        General Objective
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#specific-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Specific Objectives
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        exercise 1
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="forward-kinematics">Forward Kinematics</h1>
+<p>This repository is used to document <em>Denavit–Hartenberg (DH) frame placement</em> and <em>homogeneous transformation matrices</em> for multiple robots.</p>
+<h2 id="introduction">Introduction</h2>
+<p>The <strong>Denavit–Hartenberg (D–H) Convention</strong> is a standardized method used in robotics to model the kinematics of serial manipulators. Its main purpose is to provide a systematic way to assign coordinate frames to each link of a robotic mechanism and to describe the spatial relationship between consecutive links using a minimal set of parameters.</p>
+<p>By defining four parameters for each joint—<strong>link length (<code>aᵢ</code>)</strong>, <strong>link twist (<code>αᵢ</code>)</strong>, <strong>link offset (<code>dᵢ</code>)</strong>, and <strong>joint angle (<code>θᵢ</code>)</strong>—the Denavit–Hartenberg Convention simplifies the process of deriving <strong>homogeneous transformation matrices</strong>. These matrices describe the position and orientation of one coordinate frame with respect to another and are fundamental for forward kinematics analysis.</p>
+<p>The use of the Denavit–Hartenberg method reduces complexity, avoids ambiguity in frame assignment, and allows robotic systems to be modeled in a consistent and repeatable manner. For this reason, it is widely used in the analysis, design, and control of robotic manipulators.</p>
+<h2 id="objectives">Objectives</h2>
+<h3 id="general-objective"><strong>General Objective</strong></h3>
+<p>To apply the <strong>Denavit–Hartenberg (D–H) Convention</strong> for the kinematic modeling of robotic manipulators, with the purpose of systematically defining coordinate frames and obtaining the corresponding <strong>homogeneous Denavit–Hartenberg transformation matrices</strong>.</p>
+<h3 id="specific-objectives"><strong>Specific Objectives</strong></h3>
+<ul>
+<li><strong>OE1:</strong> To identify and correctly define the four Denavit–Hartenberg parameters<br />
+<em>(link length <code>aᵢ</code>, link twist <code>αᵢ</code>, link offset <code>dᵢ</code>, and joint angle <code>θᵢ</code>)</em> according to the standard D–H rules.</li>
+<li><strong>OE2:</strong> To assign coordinate frames to robotic links following the <strong>Denavit–Hartenberg Convention</strong>, ensuring proper axis orientation and consistency between consecutive frames.</li>
+<li><strong>OE3:</strong> To construct the <strong>Denavit–Hartenberg parameter tables</strong> for different robotic configurations while respecting the convention’s parameters and constraints.</li>
+<li><strong>OE4:</strong> To solve <strong>five kinematic exercises</strong> using the Denavit–Hartenberg method, deriving the corresponding <strong>D–H homogeneous transformation matrices</strong> for each case.</li>
+<li><strong>OE5:</strong> To analyze and validate the obtained transformation matrices by verifying their mathematical correctness and physical interpretation within robotic kinematics.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>in ever excersie in the scheme The coordinate frames are assigned according to the <strong>Denavit–Hartenberg Convention</strong>, where each <strong>z-axis</strong> is aligned with the joint axis, and each <strong>x-axis</strong> is defined along the common normal between consecutive joints. This assignment allows the direct extraction of the D–H parameters and the formulation of the corresponding transformation matrices. and in the transformation Matrix i am using the assigned frames and the Denavit–Hartenberg parameters, the homogeneous transformation matrix represents the spatial relationship between consecutive links, allowing the kinematic modeling of the robot.</p>
+</div>
+<hr />
+<h2 id="exercise-1">exercise 1</h2>
+<p><img alt="" src="../imgs2/ejercicio1.png" /></p>
+<p>This figure shows the physical configuration of <strong>Robot 1</strong>, including its links and joints. </p>
+<hr />
+<h1 id="frame-assignment-scheme">Frame Assignment / Scheme</h1>
+<p><img alt="Robot 1 scheme" src="../imgs2/ejercicio1.1.png" /></p>
+<h1 id="dh-transformation-matrix">DH Transformation Matrix</h1>
+<p><img alt="Robot 1 DH" src="../imgs2/ejercicio1.2.png" /></p>
+<hr />
+<h2 id="exercise-2">exercise 2</h2>
+<p><img alt="" src="../imgs2/ejercicio2.png" /></p>
+<p>This figure shows the physical configuration of <strong>Robot 2</strong>, including its links and joints.</p>
+<hr />
+<h1 id="frame-assignment-scheme_1">Frame Assignment / Scheme</h1>
+<p><img alt="Robot 2 scheme" src="../imgs2/ejercico2.1.jpeg" /></p>
+<h1 id="dh-transformation-matrix_1">DH Transformation Matrix</h1>
+<p><img alt="Robot 2 DH" src="../imgs2/ejercico2.2.jpeg" /> 
+<img alt="" src="../imgs2/ejercico2.3.jpeg" /></p>
+<hr />
+<h2 id="exercise-3">exercise 3</h2>
+<p><img alt="" src="../imgs2/ejercicio3.png" /></p>
+<p>This figure shows the physical configuration of <strong>Robot 3</strong>, including its links and joints. </p>
+<hr />
+<h1 id="frame-assignment-scheme_2">Frame Assignment / Scheme</h1>
+<p><img alt="Robot 3 scheme" src="../imgs2/ejercicio3.1.png" /> 
+<img alt="" src="../imgs2/ejercicio3.2.png" /> </p>
+<h1 id="dh-transformation-matrix_2">DH Transformation Matrix</h1>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>⎡1  0   0          L₂        ⎤
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>⎢                            ⎥
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>⎢0  -1  0           0        ⎥
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>⎢                            ⎥
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>⎢0  0   -1  L₁ + L₃ + L₄ - L₅⎥
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>⎢                            ⎥
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>⎣0  0   0           1        ⎦
+</span></code></pre></div>
+<hr />
+<h2 id="exercise-4">exercise 4</h2>
+<p><img alt="" src="../imgs2/ejercicio4.png" /> </p>
+<p>This figure shows the physical configuration of <strong>Robot 4</strong>, including its links and joints.</p>
+<hr />
+<h1 id="frame-assignment-scheme_3">Frame Assignment / Scheme</h1>
+<p><img alt="Robot 4 scheme" src="../imgs2/ejercicio4.1.png" /> 
+<img alt="" src="../imgs2/ejercicio4.2.png" /> 
+<img alt="" src="../imgs2/ejercicio4.3.png" /> 
+<img alt="" src="../imgs2/ejercicio4.4.png" /> </p>
+<h1 id="dh-transformation-matrix_3">DH Transformation Matrix</h1>
+<p>T06 = [
+ r11 r12 r13 px
+ r21 r22 r23 py
+ r31 r32 r33 pz
+ 0   0   0   1
+]</p>
+<h1 id="rotation-terms">Rotation Terms</h1>
+<p>r11 = c1<em>c23</em>c4<em>s5 + c1</em>s23<em>c5 - s1</em>s4*s5</p>
+<p>r12 = c6<em>(c1</em>c23<em>s4 + s1</em>c4)
+      - s6<em>(c1</em>c23<em>c4</em>c5 - c1<em>s23</em>s5 - s1<em>s4</em>c5)</p>
+<p>r13 = s6<em>(c1</em>c23<em>s4 + s1</em>c4)
+      + c6<em>(c1</em>c23<em>c4</em>c5 - c1<em>s23</em>s5 - s1<em>s4</em>c5)</p>
+<p>r21 = s1<em>c23</em>c4<em>s5 + s1</em>s23<em>c5 + c1</em>s4*s5</p>
+<p>r22 = c6<em>(s1</em>c23<em>s4 - c1</em>c4)
+      - s6<em>(s1</em>c23<em>c4</em>c5 - s1<em>s23</em>s5 + c1<em>s4</em>c5)</p>
+<p>r23 = s6<em>(s1</em>c23<em>s4 - c1</em>c4)
+      + c6<em>(s1</em>c23<em>c4</em>c5 - s1<em>s23</em>s5 + c1<em>s4</em>c5)</p>
+<p>r31 = s23<em>c4</em>s5 - c23*c5</p>
+<p>r32 = c6<em>s23</em>s4
+      - s6<em>(s23</em>c4<em>c5 + c23</em>s5)</p>
+<p>r33 = s6<em>s23</em>s4
+      + c6<em>(s23</em>c4<em>c5 + c23</em>s5)</p>
+<h1 id="position-terms">Position Terms</h1>
+<p>px = c1<em>(8</em>c2 + 8<em>c23 - d4</em>s23) - d3*s1</p>
+<p>py = s1<em>(8</em>c2 + 8<em>c23 - d4</em>s23) + d3*c1</p>
+<p>pz = 13 + 8<em>s2 + 8</em>s23 + d4*c23 + d6</p>
+<hr />
+<h2 id="exercise-5">exercise 5</h2>
+<p><img alt="" src="../imgs2/ejercicio5.png" /></p>
+<p>This figure shows the physical configuration of <strong>Robot 5</strong>, including its links and joints.</p>
+<hr />
+<h1 id="frame-assignment-scheme_4">Frame Assignment / Scheme</h1>
+<p><img alt="Robot 5 scheme" src="../imgs2/ejercicio5.1.png" />
+<img alt="" src="../imgs2/ejercicio5.2.png" />
+<img alt="" src="../imgs2/ejercicio5.3.png" />
+<img alt="" src="../imgs2/ejercicio5.4.png" />
+<img alt="" src="../imgs2/ejercicio5.5.png" />
+<img alt="" src="../imgs2/ejercicio5.6.png" /></p>
+<h1 id="dh-transformation-matrix_4">DH Transformation Matrix</h1>
+<p><img alt="Robot 5 DH" src="../imgs2/ejercicio5.7.png" />
+<img alt="" src="../imgs2/ejercicio5.8.png" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "content.tooltips"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
