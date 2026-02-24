@@ -6,7 +6,8 @@ nav:
 
     - Activity 01 ROS2 Topics: "Activity 01 - ROS2 Topics.md"
     - Activity 02 ROS2 Services: "Activity2services.md"
-    - Activity 03 ROS2 custom Service: "ActivitycustomService"
+    - Activity 03 ROS2 custom Service: "ActivitycustomService.md"
+    - turtle catch project: "turtle.md"
     - Transform Nomenclature: "Transform Nomenclature.md"
     - Forward Kinematics: "Forward Kinematics.md"
     - Forward Kinematics for KUKA AN UR ROBOT: "kuka.md"
