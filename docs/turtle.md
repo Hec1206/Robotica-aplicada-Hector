@@ -28,6 +28,7 @@ spawning and management of alive turtles.
 ## Source Codes
 
 ### turtle_controller.py
+
 ´´´pyhton
 import rclpy
 from rclpy.node import Node
@@ -151,8 +152,11 @@ def main(args=None):
 
 if __name__ == '__main__':
     main()
+
 ´´´
+
 ### turtle_spawner.py
+
 
 ´´´python
 import rclpy
@@ -244,10 +248,11 @@ def main(args=None):
 
 if __name__ == '__main__':
     main()
+
 ´´´
 
 ### turtle_launch.xml
-text
+´´´text
 <launch>
 
     <node pkg="turtlesim" exec="turtlesim_node" name="turtlesim" />
@@ -261,9 +266,10 @@ text
     </node>
 
 </launch>
+´´´
 
 ### turtle.yaml
-text
+´´´text
 turtle_controller:
   ros__parameters:
     k_linear: 2.0
@@ -275,13 +281,16 @@ turtle_spawner:
   ros__parameters:
     spawn_frequency: 1.1
     turtle_name_prefix: "turtle"
+´´´
 
 ### Turtle.msg
-text
+´´´text
+
 string name 
 float32 x
 float32 y
 float32 theta
+´´´
 
 ### TurtleArray.msg
 text
@@ -289,23 +298,25 @@ Turtle[] turtles
 
 
 ### CatchTurtle.srv
-text
+´´´text
+
 string name
 ---
 bool success
+´´´
 
 ## Execution
 
-bash
+´´´text
 ros2 launch hec_bringup turtle_launch.xml
 rqt_graph
-
+´´´
 
 ## Terminal Output
 ![terminal Screenshot](imgs3/turtle.png)
 
 ## Demo Video
-<video controls width="800">
+<video controls width="3500">
   <source src="imgs3/turtlesim_demo.mp4" type="video/mp4">
 </video>
 
