@@ -7,8 +7,6 @@ The lengauge code is XML format; Each robot has its own URDF file, launch config
 ---
 
 #  Robot 1
-
-## Robot Photo
 ![Robot 1 photo](imgs2/ejercicio1.png)
 
 ## code 1
@@ -120,9 +118,8 @@ ros2 launch urdf_tutorial display.launch.py model:=$HOME/hector_ws/src/my_robot_
 ---
 
 #  Robot 2
+![](imgs2/ejercicio2.png)
 
-## Robot Photo
-![Robot 2 photo](imgs2/ejercicio2.png)
 ## code 2
 ```text
 <?xml version="1.0"?>
@@ -246,9 +243,8 @@ ros2 launch urdf_tutorial display.launch.py model:=$HOME/hector_ws/src/my_robot_
 ---
 
 #  Robot 3
-
-## Robot Photo
 ![](imgs2/ejercicio3.png)
+
 ## code 3
 ```text
 
@@ -401,8 +397,8 @@ ros2 launch urdf_tutorial display.launch.py model:=$HOME/hector_ws/src/my_robot_
 
 #  Robot 4
 
-## Robot Photo
-![Robot 4 photo](imgs2/ejercicio4.png)
+![](imgs2/ejercicio4.png)
+
 ## code 4
 ```text
 <?xml version="1.0"?>
@@ -611,8 +607,7 @@ ros2 launch urdf_tutorial display.launch.py model:=$HOME/hector_ws/src/my_robot_
 
 #  Robot 5
 
-## Robot Photo
-![Robot 5 photo](imgs2/ejercicio5.png)
+![](imgs2/ejercicio5.png)
 
 ## code 5
 ```text
