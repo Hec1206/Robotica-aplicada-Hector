@@ -124,7 +124,7 @@ ros2 launch urdf_tutorial display.launch.py model:=$HOME/hector_ws/src/my_robot_
 ## Robot Photo
 ![Robot 2 photo](imgs2/ejercicio2.png)
 ## code 2
-text
+```text
 <?xml version="1.0"?>
 
 <robot name="2">
@@ -233,6 +233,7 @@ text
 
 
 </robot>
+```
 
 **Execution**
 ```bash
@@ -240,17 +241,17 @@ ros2 launch urdf_tutorial display.launch.py model:=$HOME/hector_ws/src/my_robot_
 ```
 
 **Results**
-![Robot 2 photo](imgs4/ROBOT2.png)
-
+![](imgs4/ROBOT2.png)
 
 ---
 
 #  Robot 3
 
 ## Robot Photo
-![Robot 3 photo](imgs2/ejercicio3.png)
+![](imgs2/ejercicio3.png)
 ## code 3
-text
+```text
+
 <?xml version="1.0"?>
 <robot name="my_robot">
 
@@ -386,6 +387,7 @@ text
   </joint>
 
 </robot>
+```
 
 **Execution**
 ```bash
@@ -402,7 +404,7 @@ ros2 launch urdf_tutorial display.launch.py model:=$HOME/hector_ws/src/my_robot_
 ## Robot Photo
 ![Robot 4 photo](imgs2/ejercicio4.png)
 ## code 4
-text
+```text
 <?xml version="1.0"?>
 
 <robot name="4">
@@ -595,6 +597,7 @@ text
     </joint> 
 
 </robot>
+```
 
 **Execution**
 ```bash
@@ -612,7 +615,7 @@ ros2 launch urdf_tutorial display.launch.py model:=$HOME/hector_ws/src/my_robot_
 ![Robot 5 photo](imgs2/ejercicio5.png)
 
 ## code 5
-text
+```text
 <?xml version="1.0"?>
 <robot name="my_robot">
 
@@ -748,6 +751,7 @@ text
   </joint>
 
 </robot>
+```
 
 **Execution**
 ```bash
