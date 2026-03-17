@@ -12,6 +12,7 @@ nav:
     - Forward Kinematics: "Forward Kinematics.md"
     - Forward Kinematics for KUKA AN UR ROBOT: "kuka.md"
     - 5 Robots URDF: "Robots.md"
+    - Inverse Kinematics: "Inverse Kinematics.md"
     
       
 markdown_extensions:
