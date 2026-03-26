@@ -50,7 +50,7 @@ in the following subsections we need to use the formulas of each phase to calcul
 
 ## Exercise 6
 
-![](imgs6/ejercicio6.png)
+![](imgs6/ejercicio6.1.png)
 
 ![](imgs6/Resultejercicio6.1.jpeg)
 ![](imgs6/Resultejercicio6.2.jpeg)
